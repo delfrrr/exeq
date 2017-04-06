@@ -38,13 +38,13 @@ Exeq.prototype.run = function(resolve, reject) {
     cwd: this.cwd
   });
 
-  s.stdout.pipe(process.stdout);
+  //s.stdout.pipe(process.stdout);
   s.stdout.on('data', function(data) {
     that.emit('stdout', data);
     stdout += data.toString();
   });
 
-  s.stderr.pipe(process.stderr);
+  //s.stderr.pipe(process.stderr);
   s.stderr.on('data', function(data) {
     that.emit('stderr', data);
     stderr += data.toString();
